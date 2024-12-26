@@ -16,19 +16,23 @@
 
 <div>
 
-    {% for main in main %}
+
+
     <table border=1 style="cellpadding: 5; cellspacing:5 ">
 
         <tr align=center>
+
+
             <td>
 
 
-            <td width = "140"><a href="{{ url_for('main') }}">{{ main.name }}</a></td>
+            <td width = "140"><a href="{{url_for ('users') }}">Перейти на страницу пользователей</a></td>
+            <td width = "140"><a href="{{url_for ('transactions') }}">Перейти на страницу транзакций</a></td>
 
 
         </tr>
     </table>
-    {% endfor %}
+
 </div>
 
 
