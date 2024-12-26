@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Все Транзакции
+{% endblock %}
+
+{% block content %}
+<h1 class="mb-5">Транзакции</h1>
+
+<div class="card-columns">
+  <div class="row">
+  {% for transaction in transactions %}
+    <div class="col-md-3">
+      <div class="card mb-3">
+
+          <div class="card-body">
+              <p class="card-text">Пользователи:
+              <p class="card-text">Транзакции: {{ transaction.sum }} минут</p>
+              <p class="card-text"> Комиссия: {{ transaction.commission }}</p>
+              <p class="card-text">Статус: {{ transaction.status }}</p>
+          </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

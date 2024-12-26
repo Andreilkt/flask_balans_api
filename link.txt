@@ -1,0 +1,13 @@
+
+модели
+https://ru.hexlet.io/blog/posts/chto-takoe-flask-i-kak-na-nem-bystro-napisat-prostoy-sayt
+https://pythonru.com/uroki/14-sozdanie-baz-dannyh-vo-flask
+
+
+админка
+https://habr.com/ru/articles/148765/
+flask create-admin
+
+api
+https://habr.com/ru/articles/855936/
+
