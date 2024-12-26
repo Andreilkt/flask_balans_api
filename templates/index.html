@@ -21,7 +21,11 @@
 
         <tr align=center>
             <td>
-            <a href="/{{user.id}}">Переход  на страницу пользователей</a></td>
+
+
+            <td width = "140"><a href="{{ url_for('user') }}">{{ user.name }}</a></td>
+
+
         </tr>
     </table>
     {% endfor %}

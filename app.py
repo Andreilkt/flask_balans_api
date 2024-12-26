@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 from models import User,Transaction, db
 
 app = Flask(__name__)
@@ -11,7 +11,7 @@ db.init_app(app)
 
 @app.route('/')
 def main():
-    #user_list = User.query.all()
+    user_list = User.query.all()
     return render_template('index.html', name='main')
 
 
