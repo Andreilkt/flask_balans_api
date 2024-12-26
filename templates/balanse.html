@@ -8,22 +8,33 @@
 <h1 class="mb-5">Пользователи</h1>
 
 <div class="card-columns">
-  <div class="row">
-  {% for user in users %}
-    <div class="col-md-3">
-      <div class="card mb-3">
+    <div class="row">
+        {% for user in users %}
+        <div class="col-md-3">
+            <div class="card mb-3">
 
-          <div class="card-body">
-              <p class="card-text">Пользователи:
-              <p class="card-text">Название: {{ user.name }}</p>
-              <p class="card-text">Баланс: {{ user.balanse }}</p>
-              <p class="card-text">Ставка комиссии: {{ user.commission_rate }}</p>
-              <p class="card-text">Вебхук: {{ user.URL_webhook }}</p>
-          </div>
-      </div>
+                <div class="card-body">
+                    <p class="card-text">Пользователи:
+                    <p class="card-text">Название: {{ user.name }}</p>
+                    <p class="card-text">Баланс: {{ user.balanse }}</p>
+                    <p class="card-text">Ставка комиссии: {{ user.commission_rate }}</p>
+                    <p class="card-text">Вебхук: {{ user.URL_webhook }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <table border=1 style="cellpadding: 5; cellspacing:5 ">
+
+            <tr align=center>
+
+                <td>
+                <td width="140"><a href="{{url_for ('main') }}">На главную</a></td>
+
+            </tr>
+        </table>
+
+
     </div>
-  {% endfor %}
-  </div>
 </div>
 
 {% endblock %}
