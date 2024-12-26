@@ -11,8 +11,8 @@ db.init_app(app)
 
 @app.route('/')
 def main():
-    user_list = User.query.all()
-    return render_template('index.html', name='main')
+    main_list = User.query.all()
+    return render_template('index.html', main=main_list, name='main')
 
 
 @app.route('/balanse')
