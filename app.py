@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for
-from models import User,Transaction, db
+from models import User, Transaction, db
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///balanse.db'
@@ -20,9 +20,11 @@ def users():
     user_list = User.query.all()
     return render_template('balanse.html', users=user_list, name='users')
 
+
 @app.route('/transaction')
 def transactions():
     transaction_list = Transaction.query.all()
     return render_template('transaction.html', transactions=transaction_list)
-if __name__ == '__main__':
-    app.run(debug=True)
+
+# if __name__ == '__main__':
+#     app.run(debug=True)

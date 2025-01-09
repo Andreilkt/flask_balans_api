@@ -8,21 +8,21 @@
 <h1 class="mb-5">Транзакции</h1>
 
 <div class="card-columns">
-  <div class="row">
-  {% for transaction in transactions %}
-    <div class="col-md-3">
-      <div class="card mb-3">
+    <div class="row">
+        {% for transaction in transactions %}
+        <div class="col-md-3">
+            <div class="card mb-3">
 
-          <div class="card-body">
-              <p class="card-text">Все транзакции по пользователю:
-              <p class="card-text">Сумма транзакций: {{ transaction.sum }}</p>
-              <p class="card-text"> Комиссия: {{ transaction.commission }}</p>
-              <p class="card-text">Статус: {{ transaction.status }}</p>
-          </div>
-      </div>
-    </div>
-  {% endfor %}
-      <table border=1 style="cellpadding: 5; cellspacing:5 ">
+                <div class="card-body">
+                    <p class="card-text">Все транзакции по пользователю:
+                    <p class="card-text">Сумма транзакций: {{ transaction.sum }}</p>
+                    <p class="card-text"> Комиссия: {{ transaction.commission }}</p>
+                    <p class="card-text">Статус: {{ transaction.status }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <table border=1 style="cellpadding: 5; cellspacing:5 ">
 
             <tr align=center>
 
@@ -31,7 +31,7 @@
             </tr>
         </table>
 
-  </div>
+    </div>
 </div>
 
 {% endblock %}

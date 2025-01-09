@@ -11,3 +11,6 @@ flask create-admin
 api
 https://habr.com/ru/articles/855936/
 
+
+учебник фласк и деплой на сервер
+https://victor-komlev.ru/frejmvork-flask/?ysclid=m55g5xdh42210654075
