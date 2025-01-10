@@ -1,5 +1,5 @@
 from flask import Flask
-from app.models import User, Transaction, db
+from models import User, Transaction, db
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///balanse.db'
@@ -11,10 +11,10 @@ if __name__ == '__main__':
         db.create_all()
 
         # Создаем Пользователей
-        user1 = User(name='ООО.Полет', balance='1000', commission_rate='10', URL_webhook='Сообщение с сервера1')
-        user2 = User(name='ООО.Airplane', balance='500', commission_rate='10', URL_webhook='Сообщение с сервера2')
-        user3 = User(name='ООО.Кайт', balance='700', commission_rate='10', URL_webhook='Сообщение с сервера3')
-        user4 = User(name='Fly_paraplan', balance='800', commission_rate='10', URL_webhook='Сообщение с сервера4')
+        user1 = User(name='ООО.Полет', username= 'admin', password='7777777', email='andreilkt@yandex.ru', balance='1000', commission_rate='10', URL_webhook='Сообщение с сервера1')
+        user2 = User(name='ООО.Airplane', username= 'admin1', password='7777777', email='andreylkt@yandex.ru', balance='500', commission_rate='10', URL_webhook='Сообщение с сервера2')
+        user3 = User(name='ООО.Кайт', username= 'admin2', password='7777777', email='andreilkt@mail.ru', balance='700', commission_rate='10', URL_webhook='Сообщение с сервера3')
+        user4 = User(name='Fly_paraplan', username= 'admin3', password='7777777', email='andreylkt@mail.ru', balance='800', commission_rate='10', URL_webhook='Сообщение с сервера4')
         db.session.add_all([user1, user2, user3, user4])
         db.session.commit()
 

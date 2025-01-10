@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Описание{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% if current_user.is_authenticated %}
+    <p class="mt-5">Привет, {{ current_user.username }}!</p>
+    <a href="{{ url_for('profile') }}" class="btn btn-primary mt-3">Мой профиль</a>
+    <a href="{{ url_for('logout') }}" class="btn btn-secondary mt-3">Выход</a>
+    <div>
+        <div class="card-body">
+            <div class="d-flex justify-content-center mb-4">
+              <img src="{{ url_for('static', filename='images/default.jpg') }}" class="rounded-circle profile-photo" alt="Profile photo">
+            </div>
+            <p>Ваши данные:</p>
+            <p>Email: {{ user.email }}</p>
+            <p>Название: {{ user.name }}</p>
+
+          </div>
+    <table border=1 style="cellpadding: 25; cellspacing:25 ">
+        <tr align=center>
+            <td>
+            <td width="140"><a href="{{url_for ('users') }}">Перейти на страницу пользователей</a></td>
+            <td width="140"><a href="{{url_for ('transactions') }}">Перейти на страницу транзакций</a></td>
+        </tr>
+    </table>
+</div>
+    {% else %}
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="text-center">Добро пожаловать в систему</h1>
+                </div>
+                <div class="card-body">
+                    <p>Пожалуйста, <a href="{{ url_for('login') }}">войдите</a> или <a href="{{ url_for('register') }}">зарегистрируйтесь</a>
+                        для просмотра своего профиля.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+
+
+{% endblock %}
