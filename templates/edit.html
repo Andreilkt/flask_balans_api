@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Редактирование профиля</h1>
+<div class="col-6">
+    <form method="post" action="{{ url_for('edit_user', id=user.id) }}">
+        <div class="mb-3">cut
+            <label for="name" class="form-label">название Кампании</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{ user.name }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Логин</label>
+            <input type="text" class="form-control" id="username" name="username" value="{{ user.username }}" required>
+        </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Пароль</label>
+                    <input type="text" class="form-control" id="password" name="password" value="" required>
+                </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">email</label>
+            <input type="text" class="form-control" id="email" name="email" value="{{ user.email }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="balance" class="form-label">Баланс</label>
+            <input type="text" class="form-control" id="balance" name="balance" value="{{ user.balance }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="commission_rate" class="form-label">Ставка комиссии</label>
+            <input type="text" class="form-control" id="commission_rate" name="commission_rate"
+                   value="{{ user.commission_rate }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="URL_webhook" class="form-label">Вебхук</label>
+            <input type="text" class="form-control" id="URL_webhook" name="URL_webhook"
+                   value="{{ user.URL_webhook }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </form>
+</div>
+<table border=1 style="cellpadding: 5; cellspacing:5 ">
+
+    <tr align=center>
+
+        <td>
+        <td width="140"><a href="{{ url_for('profile') }}">В профиль</a></td>
+
+    </tr>
+</table>
+{% endblock %}

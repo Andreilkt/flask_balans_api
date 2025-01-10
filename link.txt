@@ -10,6 +10,7 @@ flask create-admin
 
 api
 https://habr.com/ru/articles/855936/
+https://habr.com/ru/articles/358152/
 
 
 учебник фласк и деплой на сервер

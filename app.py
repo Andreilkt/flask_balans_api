@@ -80,8 +80,11 @@ def register():
         commission_rate = request.form['commission_rate']
         URL_webhook = request.form['URL_webhook']
         user = User.query.filter_by(username=username).first()
+        # email = User.query.filter_by(email=email).first()
         if user:
             flash('Имя пользователя уже занято')
+        # elif email:
+        #     flash('email уже занят')
         else:
             hashed_password = generate_password_hash(password)
             new_user = User(name=name, username=username, password=hashed_password, email=email, balance=balance,
@@ -91,6 +94,30 @@ def register():
             flash('Аккаунт успешно создан')
             return redirect(url_for('login'))
     return render_template('register.html')
+
+
+@app.route('/edit/<int:id>', methods=['GET', 'POST'])
+def edit_user(id):
+    user = User.query.get_or_404(id)
+    if request.method == 'POST':
+        user.name = request.form['name']
+        user.username = request.form['username']
+        user.password = request.form['password']
+        user.email = request.form['email']
+        user.balance = request.form['balance']
+        user.commission_rate = request.form['commission_rate']
+        user.URL_webhook = request.form['URL_webhook']
+        db.session.commit()
+        return redirect(url_for('profile'))
+    return render_template('edit.html', user=user)
+
+
+@app.route('/delete/<int:id>', methods=['POST'])
+def delete_user(id):
+    user = User.query.get_or_404(id)
+    db.session.delete(user)
+    db.session.commit()
+    return redirect(url_for('profile'))
 
 
 @app.route('/profile')

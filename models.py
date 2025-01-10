@@ -14,9 +14,10 @@ class User(UserMixin, db.Model):
     commission_rate = db.Column(db.Integer)
     URL_webhook = db.Column(db.String(100))
 
+    # def __repr__(self):
+    #     return f'<User {self.username}>'
     def __repr__(self):
-        return f'<User {self.username}>'
-
+        return f"User(name='{self.name}', username='{self.username}', email='{self.email}', balance='{self.balance}', commission_rate='{self.commission_rate}', URL_URL_webhook='{self.URL_URL_webhook}')"
 
 class Transaction(db.Model):
     id = db.Column(db.Integer, primary_key=True)
