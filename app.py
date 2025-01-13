@@ -102,12 +102,16 @@ def edit_user(id):
     if request.method == 'POST':
         user.name = request.form['name']
         user.username = request.form['username']
-        user.password = request.form['password']
+        user.password = generate_password_hash(request.form['password'])
         user.email = request.form['email']
         user.balance = request.form['balance']
         user.commission_rate = request.form['commission_rate']
         user.URL_webhook = request.form['URL_webhook']
+
+        # generate_password_hash(user.password)
+
         db.session.commit()
+
         return redirect(url_for('profile'))
     return render_template('edit.html', user=user)
 
