@@ -107,9 +107,6 @@ def edit_user(id):
         user.balance = request.form['balance']
         user.commission_rate = request.form['commission_rate']
         user.URL_webhook = request.form['URL_webhook']
-
-        # generate_password_hash(user.password)
-
         db.session.commit()
 
         return redirect(url_for('profile'))
