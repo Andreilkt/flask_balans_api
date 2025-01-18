@@ -28,7 +28,7 @@ api.register_blueprint(transactionBlueprint)
 # Add server information to the OpenAPI spec
 api.spec.options["servers"] = [
     {
-        "url": "http://127.0.0.1:8000",
+        "url": "http://185.65.200.59:8000",
         "description": "Local development server"
     }
 ]
