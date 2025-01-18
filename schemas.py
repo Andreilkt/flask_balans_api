@@ -1,5 +1,4 @@
 from marshmallow import Schema, fields
-from db import db
 
 
 class TransactionSchema(Schema):
