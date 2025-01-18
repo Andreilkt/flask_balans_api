@@ -1,10 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_login import LoginManager, login_user, current_user, logout_user
 from werkzeug.security import check_password_hash, generate_password_hash
-from models import User, Transaction, db
+from models import User, Transaction
 from flask_smorest import Api
 from db import db
-import models
 from resources import blp as transactionBlueprint
 import yaml
 
@@ -26,12 +25,12 @@ api = Api(app)
 api.register_blueprint(transactionBlueprint)
 
 # Add server information to the OpenAPI spec
-api.spec.options["servers"] = [
-    {
-        "url": "http://185.65.200.59:8000",
-        "description": "Local development server"
-    }
-]
+# api.spec.options["servers"] = [
+#     {
+#         "url": "http://127.0.0.1:8000",
+#         "description": "Local development server"
+#     }
+# ]
 
 
 # Serve OpenAPI spec document endpoint for download
