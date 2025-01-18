@@ -1,7 +1,6 @@
 from flask_login import UserMixin
-from flask_sqlalchemy import SQLAlchemy
+from db import db
 
-db = SQLAlchemy()
 
 
 class User(UserMixin, db.Model):
@@ -20,6 +19,7 @@ class User(UserMixin, db.Model):
         return f"User(name='{self.name}', username='{self.username}', email='{self.email}', balance='{self.balance}', commission_rate='{self.commission_rate}', URL_URL_webhook='{self.URL_URL_webhook}')"
 
 class Transaction(db.Model):
+    __tablename__ = "Transactions"
     id = db.Column(db.Integer, primary_key=True)
     sum = db.Column(db.Integer)
     commission = db.Column(db.Integer)

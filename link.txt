@@ -15,3 +15,7 @@ https://habr.com/ru/articles/358152/
 
 учебник фласк и деплой на сервер
 https://victor-komlev.ru/frejmvork-flask/?ysclid=m55g5xdh42210654075
+
+Свагер
+https://www.speakeasy.com/openapi/frameworks/flask
+https://auth0.com/blog/developing-restful-apis-with-python-and-flask/#-span-id--restful-flask----span--Creating-a-RESTful-Endpoint-with-Flask
