@@ -24,6 +24,7 @@ db.init_app(app)
 api = Api(app)
 api.register_blueprint(transactionBlueprint)
 
+
 # Add server information to the OpenAPI spec
 # api.spec.options["servers"] = [
 #     {
