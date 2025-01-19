@@ -11,6 +11,9 @@ flask create-admin
 api
 https://habr.com/ru/articles/855936/
 https://habr.com/ru/articles/358152/
+https://habr.com/ru/companies/ozontech/articles/825008
+https://starkovden.github.io/sdks-sample-apps.html
+https://flask-smorest.readthedocs.io/en/latest/openapi.html
 
 
 учебник фласк и деплой на сервер
@@ -21,3 +24,6 @@ https://www.speakeasy.com/openapi/frameworks/flask
 https://auth0.com/blog/developing-restful-apis-with-python-and-flask/#-span-id--restful-flask----span--Creating-a-RESTful-Endpoint-with-Flask
 
 flask openapi write --format=yaml openapi.yaml
+
+сервер
+https://devhops.ru/i/flask/deploy.php#gunicorn

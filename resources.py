@@ -7,6 +7,7 @@ from schemas import TransactionSchema
 
 blp = Blueprint("Transactions", "Transactions", url_prefix="/transactions", description="Operations on transactions")
 
+
 @blp.route("/")
 class TransactionList(MethodView):
     @blp.response(200, TransactionSchema(many=True))
@@ -22,6 +23,7 @@ class TransactionList(MethodView):
         db.session.add(transaction)
         db.session.commit()
         return transaction
+
 
 @blp.route("/<int:transaction_id>")
 class TransactionDetail(MethodView):
