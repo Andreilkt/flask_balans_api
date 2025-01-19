@@ -26,12 +26,12 @@ api = Api(app)
 api.register_blueprint(transactionBlueprint)
 
 # Add server information to the OpenAPI spec
-api.spec.options["servers"] = [
-    {
-        "url": "http://127.0.0.1:5000",
-        "description": "Local development server"
-    }
-]
+# api.spec.options["servers"] = [
+#     {
+#         "url": "http://127.0.0.1:5000",
+#         "description": "Local development server"
+#     }
+# ]
 
 
 # Serve OpenAPI spec document endpoint for download
